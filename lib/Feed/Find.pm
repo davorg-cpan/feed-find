@@ -19,7 +19,7 @@ use constant FEED_MIME_TYPES => [
     'application/rdf+xml',
 ];
 
-our $FEED_EXT = qr/\.(?:rss|xml|rdf)$/;
+our $FEED_EXT = qr/\.(?:rss|xml|rdf|atom)$/;
 our %IsFeed = map { $_ => 1 } @{ FEED_MIME_TYPES() };
 
 sub find {
