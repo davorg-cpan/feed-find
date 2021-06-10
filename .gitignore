@@ -1,5 +1,9 @@
-META.yml
+Feed-Find-*/
+Feed-Find-*.tar.gz
+META.*
+MYMETA.*
 Makefile
+MANIFEST.bak
 inc/
 pm_to_blib
 blib/
