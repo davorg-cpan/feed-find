@@ -11,8 +11,6 @@ requires 'URI';
 test_requires 'Test::More';
 test_requires 'Test::LWP::UserAgent';
 
-# use_test_base;
-auto_include_deps;
 author_tests('xt');
 auto_set_repository;
 WriteAll;

@@ -1,5 +1,6 @@
 package Feed::Find;
 use strict;
+use warnings;
 use 5.008_001;
 
 use base qw( Class::ErrorHandler );
@@ -8,7 +9,7 @@ use HTML::Parser;
 use URI;
 
 use vars qw( $VERSION $ua );
-$VERSION = '0.09';
+$VERSION = '0.10';
 
 use constant FEED_MIME_TYPES => [
     'application/x.atom+xml',
