@@ -7,7 +7,7 @@ use LWP::UserAgent;
 use HTML::Parser;
 use URI;
 
-use vars qw( $VERSION );
+use vars qw( $VERSION $ua );
 $VERSION = '0.09';
 
 use constant FEED_MIME_TYPES => [
@@ -25,7 +25,7 @@ our %IsFeed = map { $_ => 1 } @{ FEED_MIME_TYPES() };
 sub find {
     my $class = shift;
     my($uri) = @_;
-    my $ua = LWP::UserAgent->new;
+    $ua = LWP::UserAgent->new unless defined $ua;
     $ua->env_proxy;
     $ua->agent(join '/', $class, $class->VERSION);
     $ua->parse_head(0);   ## We're already basically doing this ourselves.

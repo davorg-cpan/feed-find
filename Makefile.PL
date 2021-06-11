@@ -9,6 +9,7 @@ requires 'HTML::Parser';
 requires 'URI';
 
 test_requires 'Test::More';
+test_requires 'Test::LWP::UserAgent';
 
 # use_test_base;
 auto_include_deps;
