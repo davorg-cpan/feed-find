@@ -37,8 +37,9 @@ jobs:
     name: Test coverage
     steps:
       - uses: actions/checkout@v3
-      - name: Install modules
+      - name: Install modules Module::Install
         run: cpanm Module::Install
+      - name: Install dependencies
         run: cpanm -n --installdeps .
       - name: Coverage
         env:
