@@ -28,5 +28,19 @@ jobs:
           perl-version: ${{ matrix.perl }}
       - run: perl -V
       - run: cpanm Module::Install
-      - run: cpanm --installdeps .
+      - run: cpanm -n --installdeps .
       - run: prove -lv t
+
+  coverage:
+    runs-on: ubuntu-latest
+    container: davorg/perl-coveralls:latest
+    name: Test coverage
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install modules
+        run: cpanm Module::Install
+        run: cpanm -n --installdeps .
+      - name: Coverage
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: cover -test -report Coveralls
