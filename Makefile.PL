@@ -18,7 +18,7 @@ makemaker_args(
   META_MERGE => {
     resources => {
       bugtracker => {
-        web => 'https://github.com/davorg/File-Find/issues',
+        web => 'https://github.com/davorg-cpan/File-Find/issues',
       },
     },
   },
